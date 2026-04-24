@@ -15,7 +15,9 @@
     --dark: #1a1a1a;
     --font-main: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
   }
+  html { scroll-behavior: smooth; }
   body { font-family: var(--font-main); color: var(--dark); line-height: 1.7; }
+  section[id] { scroll-margin-top: 84px; }
 
   /* ナビ */
   nav {
@@ -290,12 +292,12 @@
 <nav>
   <div class="nav-logo">miki creative nurse × AI</div>
   <ul class="nav-links">
-    <li><a href="file:///C:/Users/segod/Downloads/miki_hp_v5.html#problems">お悩み</a></li>
-    <li><a href="file:///C:/Users/segod/Downloads/miki_hp_v5.html#reasons">選ばれる理由</a></li>
-    <li><a href="file:///C:/Users/segod/Downloads/miki_hp_v5.html#pricing">料金</a></li>
-    <li><a href="file:///C:/Users/segod/Downloads/miki_hp_v5.html#profile">プロフィール</a></li>
+    <li><a href="#problems">お悩み</a></li>
+    <li><a href="#reasons">選ばれる理由</a></li>
+    <li><a href="#pricing">料金</a></li>
+    <li><a href="#profile">プロフィール</a></li>
   </ul>
-  <a href="file:///C:/Users/segod/Downloads/miki_hp_v5.html#contact" class="nav-cta">お問い合わせ</a>
+  <a href="#contact" class="nav-cta">お問い合わせ</a>
 </nav>
 
 <!-- ヒーロー -->
@@ -309,8 +311,8 @@
       医療・クリニック専門のSNS運用サポート
     </p>
     <div class="hero-btns">
-      <a href="file:///C:/Users/segod/Downloads/miki_hp_v5.html#pricing" class="btn-primary">サービス・料金を見る</a>
-      <a href="file:///C:/Users/segod/Downloads/miki_hp_v5.html#contact" class="btn-secondary">無料相談する</a>
+      <a href="#pricing" class="btn-primary">サービス・料金を見る</a>
+      <a href="#contact" class="btn-secondary">無料相談する</a>
     </div>
   </div>
   <div class="hero-right">
@@ -533,7 +535,7 @@
       3. placeholder-textのdivを削除
     -->
     <div class="profile-img-area">
-      <img src="file:///C:/Users/segod/Downloads/miki_hp_v5.html" alt="みきのプロフィール画像" style="display:none;">
+      <img src="" alt="みきのプロフィール画像" style="display:none;">
       <div class="profile-img-placeholder-text">イラスト画像<br>準備中</div>
     </div>
     <div class="profile-right">
@@ -561,7 +563,7 @@
 <section class="contact" id="contact">
   <h2>まずはお気軽にご相談ください</h2>
   <p>「こんなことできる？」という小さなご相談から大歓迎です。<br>丁寧にヒアリングした上でご提案いたします。</p>
-  <a href="mailto:your-email@example.com" class="contact-btn">メールでお問い合わせ</a>
+  <a href="mailto:miki.creative.nurse@gmail.com?subject=%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%8B%E3%82%89%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B" class="contact-btn">メールでお問い合わせ</a>
   <div class="contact-links">
     <a href="https://www.instagram.com/mamanursemichi" target="_blank">📷 Instagram</a>
     <a href="https://note.com/mamanursemichi" target="_blank">📝 note</a>
