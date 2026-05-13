@@ -136,6 +136,59 @@
   .reason-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; }
   .reason-card p { font-size: 0.875rem; color: var(--gray-text); line-height: 1.8; }
 
+  /* 制作実績 */
+  .portfolio { padding: 5rem 5%; background: white; }
+  .portfolio-intro {
+    max-width: 860px; margin: 0 auto 3rem; text-align: center;
+    font-size: 0.95rem; color: var(--gray-text); line-height: 1.9;
+  }
+  .portfolio-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem; max-width: 1100px; margin: 0 auto;
+  }
+  .portfolio-card {
+    background: var(--gray-light); border-radius: 18px; overflow: hidden;
+    border: 1px solid #e6ece9; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+  .portfolio-media {
+    aspect-ratio: 4 / 3; background: white; position: relative;
+    border-bottom: 1px solid #e6ece9; overflow: hidden;
+  }
+  .portfolio-media img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .portfolio-placeholder {
+    position: absolute; inset: 0; display: grid; place-items: center;
+    padding: 1.5rem; text-align: center; color: var(--gray-text);
+    background: linear-gradient(135deg, rgba(232,245,240,0.95), rgba(255,255,255,0.98));
+  }
+  .portfolio-placeholder strong {
+    display: block; color: var(--green); font-size: 0.95rem; margin-bottom: 0.5rem;
+  }
+  .portfolio-body { padding: 1.4rem; }
+  .portfolio-meta {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.9rem;
+  }
+  .portfolio-badge {
+    display: inline-block; background: var(--green-light); color: var(--green);
+    padding: 0.3rem 0.75rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700;
+  }
+  .portfolio-card h3 {
+    font-size: 1.05rem; line-height: 1.6; margin-bottom: 0.9rem; color: var(--dark);
+  }
+  .portfolio-copy {
+    display: grid; gap: 0.8rem; font-size: 0.88rem; color: var(--gray-text); line-height: 1.8;
+  }
+  .portfolio-copy strong { color: var(--dark); }
+  .portfolio-note {
+    margin-top: 0.85rem; font-size: 0.78rem; color: var(--gray-text);
+    padding-top: 0.85rem; border-top: 1px solid #dde7e2;
+  }
+  .portfolio-footer-note {
+    max-width: 1100px; margin: 1.5rem auto 0; font-size: 0.8rem;
+    color: var(--gray-text); line-height: 1.8; text-align: center;
+  }
+
   /* 料金プラン（サービス内容と統合） */
   .pricing { padding: 5rem 5%; background: var(--gray-light); }
   .pricing-cards {
@@ -268,6 +321,7 @@
     .problems-grid { grid-template-columns: repeat(2, 1fr); }
     .hero { grid-template-columns: 1fr 1fr; }
     .hero-right img { object-fit: contain; object-position: center bottom; background: #f8f9fa; }
+    .portfolio-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 800px) {
     .hero { grid-template-columns: 1fr; min-height: auto; }
@@ -302,6 +356,7 @@
   <ul class="nav-links">
     <li><a href="#problems">お悩み</a></li>
     <li><a href="#reasons">選ばれる理由</a></li>
+    <li><a href="#portfolio">制作実績</a></li>
     <li><a href="#pricing">料金</a></li>
     <li><a href="#profile">プロフィール</a></li>
   </ul>
@@ -433,6 +488,140 @@
       <p>24時間以内（平均3〜6時間）の返信対応。小さなご相談から丁寧にサポートします。</p>
     </div>
   </div>
+</section>
+
+<!-- 制作実績・サンプル -->
+<section class="portfolio" id="portfolio">
+  <p class="section-label">Portfolio</p>
+  <h2 class="section-title">制作実績・サンプル</h2>
+  <p class="portfolio-intro">
+    医療現場での経験をもとに、患者さん向け説明資料、院内マニュアル、SNS投稿画像、チェックリスト整備を行っています。<br>
+    専門的な内容を、読み手に合わせてわかりやすく整理することを大切にしています。
+  </p>
+  <div class="portfolio-grid">
+    <article class="portfolio-card">
+      <div class="portfolio-media">
+        <img src="assets/portfolio/01-ophthalmic-surgery-guide.svg" alt="眼科手術を受ける方へのご案内資料" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <div class="portfolio-placeholder" style="display:none;">
+          <div>
+            <strong>プレビュー読込エラー</strong>
+            <span>`assets/portfolio/01-ophthalmic-surgery-guide.svg` を表示できませんでした</span>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-body">
+        <div class="portfolio-meta">
+          <span class="portfolio-badge">患者さん向け資料</span>
+          <span class="portfolio-badge">術後案内</span>
+        </div>
+        <h3>眼科手術を受ける方へのご案内資料</h3>
+        <div class="portfolio-copy">
+          <p><strong>目的：</strong>眼科手術を検討している患者さんとご家族に向けて、術後の通院予定や生活上の注意点を整理した案内資料です。</p>
+          <p><strong>できることとの接続：</strong>医療的な内容を、受け取る方が見返しやすい形に整え、付き添い・保護メガネ・眼の清拭方法まで行動に結びつく情報としてまとめられます。</p>
+        </div>
+        <p class="portfolio-note">※ 一部内容を匿名化・再構成しています。実在情報・患者情報は含みません。</p>
+      </div>
+    </article>
+
+    <article class="portfolio-card">
+      <div class="portfolio-media">
+        <img src="assets/portfolio/02-retinal-detachment-aftercare.svg" alt="網膜剥離手術後の過ごし方説明資料" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <div class="portfolio-placeholder" style="display:none;">
+          <div>
+            <strong>プレビュー読込エラー</strong>
+            <span>`assets/portfolio/02-retinal-detachment-aftercare.svg` を表示できませんでした</span>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-body">
+        <div class="portfolio-meta">
+          <span class="portfolio-badge">患者さん向け資料</span>
+          <span class="portfolio-badge">術後説明資料</span>
+        </div>
+        <h3>網膜剥離手術後の過ごし方説明資料</h3>
+        <div class="portfolio-copy">
+          <p><strong>目的：</strong>網膜剥離手術後に必要な体位制限について、患者さんが自宅でも確認しやすいようにまとめた説明資料です。</p>
+          <p><strong>できることとの接続：</strong>術後の注意点を、うつむき姿勢の理由・期間・工夫まで生活場面に沿って整理し、読み手が理解しやすい説明へ落とし込めます。</p>
+        </div>
+        <p class="portfolio-note">※ 一部内容を匿名化・再構成しています。実際の対応は医師・医療機関の指示に従ってください。</p>
+      </div>
+    </article>
+
+    <article class="portfolio-card">
+      <div class="portfolio-media">
+        <img src="assets/portfolio/03-digital-sticky-note-manual.jpg" alt="クリニック向け 電子付箋運用マニュアル" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <div class="portfolio-placeholder" style="display:none;">
+          <div>
+            <strong>画像配置待ち</strong>
+            <span>`assets/portfolio/03-digital-sticky-note-manual.jpg` を置くと表示されます</span>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-body">
+        <div class="portfolio-meta">
+          <span class="portfolio-badge">院内マニュアル</span>
+          <span class="portfolio-badge">業務改善</span>
+        </div>
+        <h3>クリニック向け 電子付箋運用マニュアル</h3>
+        <div class="portfolio-copy">
+          <p><strong>目的：</strong>電子カルテ上の付箋運用を、職種別の色分けや整理ルールとしてまとめたスタッフ向けマニュアルです。</p>
+          <p><strong>できることとの接続：</strong>運用ルールと目的が一目で伝わる構成に整え、Before / After や情報共有ルールまで現場で迷わず使える形にできます。</p>
+        </div>
+        <p class="portfolio-note">※ 架空クリニック用サンプルです。一部イラスト作成にAI画像生成補助を使用しています。</p>
+      </div>
+    </article>
+
+    <article class="portfolio-card">
+      <div class="portfolio-media">
+        <img src="assets/portfolio/04-ophthalmic-medicine-instagram.svg" alt="看護師向け 眼科薬剤Instagram投稿制作" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <div class="portfolio-placeholder" style="display:none;">
+          <div>
+            <strong>プレビュー読込エラー</strong>
+            <span>`assets/portfolio/04-ophthalmic-medicine-instagram.svg` を表示できませんでした</span>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-body">
+        <div class="portfolio-meta">
+          <span class="portfolio-badge">SNS投稿制作</span>
+          <span class="portfolio-badge">看護師向け</span>
+        </div>
+        <h3>看護師向け 眼科薬剤Instagram投稿制作</h3>
+        <div class="portfolio-copy">
+          <p><strong>目的：</strong>眼科薬剤について、看護師向けに確認しやすいInstagram投稿として整理・制作したサンプルです。</p>
+          <p><strong>できることとの接続：</strong>添付文書情報や看護視点の注意点を踏まえ、薬剤名が見え、短時間で要点が伝わる投稿構成へ整理できます。</p>
+        </div>
+        <p class="portfolio-note">※ 掲載許可確認済みの制作物です。キャプションは先方作成、投稿内文章整理・画像制作を担当しました。</p>
+      </div>
+    </article>
+
+    <article class="portfolio-card">
+      <div class="portfolio-media">
+        <img src="assets/portfolio/05-checklist-maintenance.svg" alt="クリニック向け 点検表・チェックリスト整備" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <div class="portfolio-placeholder" style="display:none;">
+          <div>
+            <strong>プレビュー読込エラー</strong>
+            <span>`assets/portfolio/05-checklist-maintenance.svg` を表示できませんでした</span>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-body">
+        <div class="portfolio-meta">
+          <span class="portfolio-badge">チェックリスト整備</span>
+          <span class="portfolio-badge">業務改善</span>
+        </div>
+        <h3>クリニック向け 点検表・チェックリスト整備</h3>
+        <div class="portfolio-copy">
+          <p><strong>目的：</strong>クリニック内の定期点検や物品管理に使えるチェックリストを、公開用サンプルとして再構成した資料です。</p>
+          <p><strong>できることとの接続：</strong>表紙_使い方、緊急セット点検表、AED点検表、向精神薬_残数チェック表のように、点検漏れや引き継ぎ漏れを防ぎやすい設計に整えられます。</p>
+        </div>
+        <p class="portfolio-note">※ 架空クリニック用サンプルです。実在の施設情報・患者情報は含みません。</p>
+      </div>
+    </article>
+  </div>
+  <p class="portfolio-footer-note">
+    すべて公開用サンプル、または匿名化・再構成した内容をもとに掲載しています。実在の患者情報・個人情報・施設内部情報は含みません。
+  </p>
 </section>
 
 <!-- 料金プラン（サービス内容と統合） -->

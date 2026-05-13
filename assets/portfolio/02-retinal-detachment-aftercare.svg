@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#f5fbfa"/>
+<stop offset="100%" stop-color="#eef5fb"/>
+</linearGradient>
+</defs>
+<rect width="1200" height="900" fill="url(#bg)"/>
+<rect x="36" y="32" width="1128" height="836" rx="30" fill="#ffffff" stroke="#d7e5eb" stroke-width="2"/>
+<text x="72" y="94" font-size="18" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3f7f88">制作実績・サンプル</text>
+<text x="72" y="148" font-size="36" font-weight="700" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#16353b">網膜剥離手術後の過ごし方説明資料</text>
+<text x="72" y="184" font-size="19" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#5d7078">体位制限や生活上の注意点を、自宅でも確認しやすい流れに整理した公開用サンプル</text>
+<rect x="60" y="210" width="540" height="520" rx="24" fill="#fcfefe" stroke="#dbe8ed" stroke-width="2"/>
+<rect x="60" y="210" width="540" height="54" rx="24" fill="#ebf6f8"/>
+<circle cx="88" cy="238" r="6" fill="#9fc8cf"/>
+<circle cx="108" cy="238" r="6" fill="#9fc8cf"/>
+<circle cx="128" cy="238" r="6" fill="#9fc8cf"/>
+<text x="152" y="246" font-size="20" font-weight="600" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#27474d">うつむき姿勢が必要な理由</text>
+<text x="88" y="308" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">網膜剥離術後の患者様へ</text>
+<text x="88" y="346" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">うつむき姿勢を指示された場合</text>
+<text x="88" y="384" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">眼の中に空気かガスが入った方は、網膜に空気やガスをあ</text>
+<text x="88" y="422" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">てて網膜をくっつける為に、術直後からうつむき姿勢が必</text>
+<text x="88" y="460" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">要となります。網膜剥離の治療効果をより良くするために</text>
+<text x="88" y="498" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">必要な体位となるため、トイレと食事以外は就寝時もうつ</text>
+<text x="88" y="536" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">むき姿勢が必要です。その期間の注意点がいくつかありま</text>
+<text x="88" y="574" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">す。</text>
+<text x="88" y="612" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">うつむき姿勢の期間</text>
+<text x="88" y="650" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">眼の中に入れた気体の種類により期間が異なります。手術</text>
+<text x="88" y="688" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">直後にうつむき姿勢の指示があった場合は、その後医師か</text>
+<text x="88" y="726" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">ら終了の指示があるまでうつむき姿勢を継続してください</text>
+<rect x="84" y="606" width="492" height="90" rx="20" fill="#f4faf6" stroke="#c9e2cf" />
+<text x="100" y="642" font-size="20" font-weight="700" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#2c5b41">患者さんが知りたいポイント</text>
+<text x="100" y="672" font-size="18" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#4f6763">うつむき姿勢の期間、注意事項、つらくなったときの工夫ま</text>
+<text x="100" y="696" font-size="18" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#4f6763">で一続きで確認できる構成。</text>
+<rect x="600" y="210" width="540" height="520" rx="24" fill="#fcfefe" stroke="#dbe8ed" stroke-width="2"/>
+<rect x="600" y="210" width="540" height="54" rx="24" fill="#ebf6f8"/>
+<circle cx="628" cy="238" r="6" fill="#9fc8cf"/>
+<circle cx="648" cy="238" r="6" fill="#9fc8cf"/>
+<circle cx="668" cy="238" r="6" fill="#9fc8cf"/>
+<text x="692" y="246" font-size="20" font-weight="600" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#27474d">姿勢保持の工夫</text>
+<text x="628" y="308" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">眼内に空気やガスが入った場合の注意事項</text>
+<text x="628" y="346" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">1.　うつむき姿勢が必要となるため車や自転車の運転は</text>
+<text x="628" y="384" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">出来ません。お付き添いの方とともに移動をお願いします</text>
+<text x="628" y="422" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">。</text>
+<text x="628" y="460" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">2.　うつむき姿勢では食事の用意などを行うことが難し</text>
+<text x="628" y="498" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">いため、ご家族等にお願いするか、事前に簡単に食べられ</text>
+<text x="628" y="536" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">る物を用意しておいてください。</text>
+<text x="628" y="574" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">3.　洗髪、洗眼、入浴はしばらく出来ません。お顔のみ</text>
+<text x="628" y="612" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">下向きでシャワー浴が出来る場合もあります。医師から説</text>
+<text x="628" y="650" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">明があるまではお風呂は控えてください。</text>
+<text x="628" y="688" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">4.　飛行機には乗れません。高度が高い所（登山等）に</text>
+<text x="628" y="726" font-size="22" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#34454d">は行けません。眼の中のガスが膨張し失明する危険性があ</text>
+<rect x="624" y="606" width="492" height="90" rx="20" fill="#f4faf6" stroke="#c9e2cf" />
+<text x="640" y="642" font-size="20" font-weight="700" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#2c5b41">生活場面に沿った説明</text>
+<text x="640" y="672" font-size="18" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#4f6763">うつむき姿勢枕の作り方など、退院後にそのまま見返せる粒</text>
+<text x="640" y="696" font-size="18" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#4f6763">度でまとめています。</text>
+<rect x="72" y="790" width="1056" height="44" rx="18" fill="#eff6f8"/>
+<text x="92" y="818" font-size="18" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#51656c">一部内容を匿名化・再構成しています。実際の対応は医師・医療機関の指示に従ってください。</text>
+</svg>

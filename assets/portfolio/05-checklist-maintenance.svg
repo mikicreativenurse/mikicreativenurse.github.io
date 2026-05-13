@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+<rect width="1200" height="900" fill="#f7fbfd"/>
+<rect x="36" y="32" width="1128" height="836" rx="30" fill="#ffffff" stroke="#d7e5eb" stroke-width="2"/>
+<text x="72" y="94" font-size="18" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3f7f88">制作実績・サンプル</text>
+<text x="72" y="146" font-size="36" font-weight="700" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#16353b">クリニック向け 点検表・チェックリスト整備</text>
+<text x="72" y="184" font-size="19" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#5d7078">点検漏れや引き継ぎ漏れを防ぎやすいように、使い方と記録欄を整理した公開用サンプル</text>
+<rect x="70" y="222" width="410" height="500" rx="22" fill="#fcfefe" stroke="#dbe8ed" stroke-width="2"/>
+<rect x="70" y="222" width="410" height="58" rx="22" fill="#eef6f8"/>
+<text x="94" y="258" font-size="22" font-weight="700" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#28464d">表紙_使い方</text>
+<text x="96" y="320" font-size="20" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#36474f">1. シートごとの役割がひと目で分かる構成</text>
+<text x="96" y="362" font-size="20" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#36474f">2. 点検記録の書き方を冒頭で案内</text>
+<text x="96" y="404" font-size="20" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#36474f">3. 月次・日次の使い分けを整理</text>
+<text x="96" y="446" font-size="20" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#36474f">4. 引き継ぎ時に迷いにくい見出し設計</text>
+<rect x="96" y="502" width="352" height="156" rx="18" fill="#f5faf3" stroke="#d7e6d2"/>
+<text x="120" y="546" font-size="20" font-weight="700" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#30553d">掲載候補シート</text>
+<text x="120" y="584" font-size="18" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#51656c">・ 緊急セット点検表</text>
+<text x="120" y="616" font-size="18" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#51656c">・ AED点検表</text>
+<text x="120" y="648" font-size="18" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#51656c">・ 向精神薬_残数チェック表</text>
+<rect x="530" y="222" width="660" height="500" rx="22" fill="#fcfefe" stroke="#dbe8ed" stroke-width="2"/>
+<rect x="530" y="222" width="660" height="48" rx="22" fill="#eef6f8"/>
+<text x="544" y="253" font-size="18" font-weight="700" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#28464d">項目</text>
+<line x1="670" y1="222" x2="670" y2="722" stroke="#d8e6ea"/>
+<text x="684" y="253" font-size="18" font-weight="700" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#28464d">確認内容</text>
+<line x1="850" y1="222" x2="850" y2="722" stroke="#d8e6ea"/>
+<text x="864" y="253" font-size="18" font-weight="700" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#28464d">頻度</text>
+<line x1="960" y1="222" x2="960" y2="722" stroke="#d8e6ea"/>
+<text x="974" y="253" font-size="18" font-weight="700" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#28464d">担当</text>
+<line x1="1070" y1="222" x2="1070" y2="722" stroke="#d8e6ea"/>
+<text x="1084" y="253" font-size="18" font-weight="700" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#28464d">記録</text>
+<rect x="530" y="270" width="660" height="48" fill="#ffffff"/>
+<line x1="530" y1="270" x2="1190" y2="270" stroke="#d8e6ea"/>
+<text x="544" y="300" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">緊急セット</text>
+<text x="684" y="300" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">数量・期限を確認</text>
+<text x="864" y="300" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">毎月</text>
+<text x="974" y="300" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">看護師</text>
+<text x="1084" y="300" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">□</text>
+<rect x="530" y="318" width="660" height="48" fill="#f9fcfd"/>
+<line x1="530" y1="318" x2="1190" y2="318" stroke="#d8e6ea"/>
+<text x="544" y="348" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">AED</text>
+<text x="684" y="348" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">バッテリー表示・備品</text>
+<text x="864" y="348" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">毎月</text>
+<text x="974" y="348" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">受付</text>
+<text x="1084" y="348" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">□</text>
+<rect x="530" y="366" width="660" height="48" fill="#ffffff"/>
+<line x1="530" y1="366" x2="1190" y2="366" stroke="#d8e6ea"/>
+<text x="544" y="396" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">向精神薬</text>
+<text x="684" y="396" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">残数・施錠を確認</text>
+<text x="864" y="396" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">毎日</text>
+<text x="974" y="396" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">管理者</text>
+<text x="1084" y="396" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">□</text>
+<rect x="530" y="414" width="660" height="48" fill="#f9fcfd"/>
+<line x1="530" y1="414" x2="1190" y2="414" stroke="#d8e6ea"/>
+<text x="544" y="444" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">水交換</text>
+<text x="684" y="444" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">交換日・実施者</text>
+<text x="864" y="444" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">定期</text>
+<text x="974" y="444" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">スタッフ</text>
+<text x="1084" y="444" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">□</text>
+<rect x="530" y="462" width="660" height="48" fill="#ffffff"/>
+<line x1="530" y1="462" x2="1190" y2="462" stroke="#d8e6ea"/>
+<text x="544" y="492" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">備考</text>
+<text x="684" y="492" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">引き継ぎ内容を記録</text>
+<text x="864" y="492" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">-</text>
+<text x="974" y="492" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">-</text>
+<text x="1084" y="492" font-size="16" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#3d4f56">記入</text>
+<rect x="72" y="770" width="1056" height="44" rx="18" fill="#eff6f8"/>
+<text x="92" y="798" font-size="18" font-family="Segoe UI, Yu Gothic UI, sans-serif" fill="#51656c">公開用に再構成したサンプルです。実在の施設情報・患者情報は含みません。</text>
+</svg>
