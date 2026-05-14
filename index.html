@@ -165,6 +165,16 @@
     padding: 0.75rem;
     background: #f6f8f7;
   }
+  .portfolio-media.doc-preview {
+    aspect-ratio: 4 / 3;
+    background: white;
+  }
+  .portfolio-media.doc-preview img {
+    object-fit: contain;
+    object-position: center top;
+    padding: 0.4rem;
+    background: white;
+  }
   .portfolio-gallery {
     height: 100%;
     display: grid;
@@ -187,7 +197,13 @@
   }
   .portfolio-gallery img {
     object-fit: contain;
-    background: #4a4a4a;
+    background: #efefef;
+    filter: saturate(0.93) brightness(1.02);
+  }
+  .portfolio-card-sns {
+    grid-column: 1 / -1;
+    width: min(100%, 540px);
+    justify-self: center;
   }
   .portfolio-body { padding: 1.4rem; }
   .portfolio-meta {
@@ -383,6 +399,7 @@
     .portfolio-media { aspect-ratio: 4 / 3; }
     .portfolio-gallery { gap: 0.45rem; padding: 0.8rem; }
     .portfolio-gallery a:nth-child(2) { transform: none; }
+    .portfolio-card-sns { width: 100%; }
     .profile-inner { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
     .profile-img-area { margin: 0 auto; }
     .profile-tags { justify-content: center; }
@@ -543,8 +560,8 @@
     専門的な内容を、読み手に合わせてわかりやすく整理することを大切にしています。
   </p>
   <div class="portfolio-grid">
-    <article class="portfolio-card">
-      <div class="portfolio-media contain">
+    <article class="portfolio-card portfolio-card-sns">
+      <div class="portfolio-media doc-preview">
         <a href="assets/portfolio/real/01-surgery-guide-full.png" target="_blank" rel="noopener">
           <img src="assets/portfolio/real/01-surgery-guide-cropped.png" alt="眼科手術を受ける方へのご案内資料のスクリーンショット">
         </a>
@@ -565,7 +582,7 @@
     </article>
 
     <article class="portfolio-card">
-      <div class="portfolio-media contain">
+      <div class="portfolio-media doc-preview">
         <a href="assets/portfolio/real/02-retinal-aftercare-full.png" target="_blank" rel="noopener">
           <img src="assets/portfolio/real/02-retinal-aftercare-cropped.png" alt="網膜剥離手術後の過ごし方説明資料のスクリーンショット">
         </a>
