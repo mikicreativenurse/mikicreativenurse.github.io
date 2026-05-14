@@ -151,19 +151,43 @@
     border: 1px solid #e6ece9; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   }
   .portfolio-media {
-    aspect-ratio: 4 / 3; background: white; position: relative;
+    aspect-ratio: 16 / 10; background: #f6f8f7; position: relative;
     border-bottom: 1px solid #e6ece9; overflow: hidden;
+  }
+  .portfolio-media > a {
+    width: 100%; height: 100%; display: block;
   }
   .portfolio-media img {
     width: 100%; height: 100%; object-fit: cover; display: block;
   }
-  .portfolio-placeholder {
-    position: absolute; inset: 0; display: grid; place-items: center;
-    padding: 1.5rem; text-align: center; color: var(--gray-text);
-    background: linear-gradient(135deg, rgba(232,245,240,0.95), rgba(255,255,255,0.98));
+  .portfolio-media.contain img {
+    object-fit: contain;
+    padding: 0.75rem;
+    background: #f6f8f7;
   }
-  .portfolio-placeholder strong {
-    display: block; color: var(--green); font-size: 0.95rem; margin-bottom: 0.5rem;
+  .portfolio-gallery {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.7rem;
+    padding: 1rem;
+    align-items: center;
+  }
+  .portfolio-gallery a {
+    display: block;
+    height: calc(100% - 0.2rem);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #dde7e2;
+    box-shadow: 0 10px 24px rgba(25, 50, 42, 0.08);
+    background: white;
+  }
+  .portfolio-gallery a:nth-child(2) {
+    transform: translateY(-0.45rem);
+  }
+  .portfolio-gallery img {
+    object-fit: contain;
+    background: #4a4a4a;
   }
   .portfolio-body { padding: 1.4rem; }
   .portfolio-meta {
@@ -174,15 +198,32 @@
     padding: 0.3rem 0.75rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700;
   }
   .portfolio-card h3 {
-    font-size: 1.05rem; line-height: 1.6; margin-bottom: 0.9rem; color: var(--dark);
+    font-size: 1.05rem; line-height: 1.6; margin-bottom: 0.8rem; color: var(--dark);
   }
   .portfolio-copy {
-    display: grid; gap: 0.8rem; font-size: 0.88rem; color: var(--gray-text); line-height: 1.8;
+    font-size: 0.9rem; color: var(--gray-text); line-height: 1.85;
   }
-  .portfolio-copy strong { color: var(--dark); }
   .portfolio-note {
     margin-top: 0.85rem; font-size: 0.78rem; color: var(--gray-text);
     padding-top: 0.85rem; border-top: 1px solid #dde7e2;
+  }
+  .portfolio-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1rem;
+  }
+  .portfolio-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--green);
+    text-decoration: none;
+  }
+  .portfolio-link:hover {
+    text-decoration: underline;
   }
   .portfolio-footer-note {
     max-width: 1100px; margin: 1.5rem auto 0; font-size: 0.8rem;
@@ -339,6 +380,9 @@
     .hero-right::after { background: linear-gradient(to bottom, white 0%, transparent 15%); }
     .problems-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
     .reasons-grid { grid-template-columns: 1fr; }
+    .portfolio-media { aspect-ratio: 4 / 3; }
+    .portfolio-gallery { gap: 0.45rem; padding: 0.8rem; }
+    .portfolio-gallery a:nth-child(2) { transform: none; }
     .profile-inner { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
     .profile-img-area { margin: 0 auto; }
     .profile-tags { justify-content: center; }
@@ -366,12 +410,11 @@
 <!-- ヒーロー -->
 <section class="hero">
   <div class="hero-left">
-    <span class="hero-tag">看護師 × AI × クリエイティブ</span>
-    <h1>医療×AIで、<br><span>あなたのクリニックを</span><br>もっと身近に。</h1>
+    <span class="hero-tag">元眼科看護師13年 × 情報整理 × クリエイティブ</span>
+    <h1>医療現場の情報を、<br><span>伝わる資料と発信に</span><br>整えます。</h1>
     <p class="hero-sub">
-      元眼科看護師13年の専門知識と最新AIツールを組み合わせ、<br>
-      医療・クリニック専門のSNS運用や投稿制作をサポート。<br>
-      正確で伝わる発信を、無理なく続けられる形でお手伝いします。
+      元眼科看護師13年の現場理解を活かし、患者さん向け説明資料、院内マニュアル、チェックリスト、SNS投稿制作をサポートします。<br>
+      専門的な内容を、患者さん・スタッフ・読者に伝わる形へ整理し、現場の負担を減らすお手伝いをします。
     </p>
     <div class="hero-btns">
       <a href="#pricing" class="btn-primary">サービス・料金を見る</a>
@@ -379,7 +422,8 @@
     </div>
     <div class="hero-points">
       <span class="hero-point">元眼科看護師13年</span>
-      <span class="hero-point">医療分野の発信に対応</span>
+      <span class="hero-point">患者さん向け資料に対応</span>
+      <span class="hero-point">マニュアル・チェックリスト整備</span>
       <span class="hero-point">24時間以内に返信</span>
       <span class="hero-point">単発・継続どちらも相談可</span>
     </div>
@@ -500,38 +544,31 @@
   </p>
   <div class="portfolio-grid">
     <article class="portfolio-card">
-      <div class="portfolio-media">
-        <img src="assets/portfolio/01-ophthalmic-surgery-guide.svg" alt="眼科手術を受ける方へのご案内資料" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-        <div class="portfolio-placeholder" style="display:none;">
-          <div>
-            <strong>プレビュー読込エラー</strong>
-            <span>`assets/portfolio/01-ophthalmic-surgery-guide.svg` を表示できませんでした</span>
-          </div>
-        </div>
+      <div class="portfolio-media contain">
+        <a href="assets/portfolio/real/01-surgery-guide-full.png" target="_blank" rel="noopener">
+          <img src="assets/portfolio/real/01-surgery-guide-cropped.png" alt="眼科手術を受ける方へのご案内資料のスクリーンショット">
+        </a>
       </div>
       <div class="portfolio-body">
         <div class="portfolio-meta">
           <span class="portfolio-badge">患者さん向け資料</span>
-          <span class="portfolio-badge">術後案内</span>
+          <span class="portfolio-badge">案内文整理</span>
         </div>
         <h3>眼科手術を受ける方へのご案内資料</h3>
-        <div class="portfolio-copy">
-          <p><strong>目的：</strong>眼科手術を検討している患者さんとご家族に向けて、術後の通院予定や生活上の注意点を整理した案内資料です。</p>
-          <p><strong>できることとの接続：</strong>医療的な内容を、受け取る方が見返しやすい形に整え、付き添い・保護メガネ・眼の清拭方法まで行動に結びつく情報としてまとめられます。</p>
+        <p class="portfolio-copy">眼科手術を検討している患者さんとご家族に向けて、術前後の流れや生活上の注意点を整理した案内資料です。受け取る方が見返しやすいよう、必要な情報をやさしい言葉でまとめています。</p>
+        <div class="portfolio-links">
+          <a class="portfolio-link" href="assets/portfolio/real/01-surgery-guide-full.png" target="_blank" rel="noopener">案内資料を拡大表示</a>
+          <a class="portfolio-link" href="assets/portfolio/real/01-eye-cleaning-full.png" target="_blank" rel="noopener">眼の清拭方法を見る</a>
         </div>
-        <p class="portfolio-note">※ 一部内容を匿名化・再構成しています。実在情報・患者情報は含みません。</p>
+        <p class="portfolio-note">一部内容を匿名化・再構成しています。実在情報・患者情報は含みません。</p>
       </div>
     </article>
 
     <article class="portfolio-card">
-      <div class="portfolio-media">
-        <img src="assets/portfolio/02-retinal-detachment-aftercare.svg" alt="網膜剥離手術後の過ごし方説明資料" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-        <div class="portfolio-placeholder" style="display:none;">
-          <div>
-            <strong>プレビュー読込エラー</strong>
-            <span>`assets/portfolio/02-retinal-detachment-aftercare.svg` を表示できませんでした</span>
-          </div>
-        </div>
+      <div class="portfolio-media contain">
+        <a href="assets/portfolio/real/02-retinal-aftercare-full.png" target="_blank" rel="noopener">
+          <img src="assets/portfolio/real/02-retinal-aftercare-cropped.png" alt="網膜剥離手術後の過ごし方説明資料のスクリーンショット">
+        </a>
       </div>
       <div class="portfolio-body">
         <div class="portfolio-meta">
@@ -539,23 +576,19 @@
           <span class="portfolio-badge">術後説明資料</span>
         </div>
         <h3>網膜剥離手術後の過ごし方説明資料</h3>
-        <div class="portfolio-copy">
-          <p><strong>目的：</strong>網膜剥離手術後に必要な体位制限について、患者さんが自宅でも確認しやすいようにまとめた説明資料です。</p>
-          <p><strong>できることとの接続：</strong>術後の注意点を、うつむき姿勢の理由・期間・工夫まで生活場面に沿って整理し、読み手が理解しやすい説明へ落とし込めます。</p>
+        <p class="portfolio-copy">網膜剥離手術後に必要な体位制限について、患者さんが自宅でも確認しやすいようにまとめた説明資料です。術後の注意点を、生活場面に沿って理解しやすく整理しています。</p>
+        <div class="portfolio-links">
+          <a class="portfolio-link" href="assets/portfolio/real/02-retinal-aftercare-full.png" target="_blank" rel="noopener">資料を拡大表示</a>
         </div>
-        <p class="portfolio-note">※ 一部内容を匿名化・再構成しています。実際の対応は医師・医療機関の指示に従ってください。</p>
+        <p class="portfolio-note">一部内容を匿名化・再構成しています。実際の対応は医師・医療機関の指示に従ってください。</p>
       </div>
     </article>
 
     <article class="portfolio-card">
-      <div class="portfolio-media">
-        <img src="assets/portfolio/03-digital-sticky-note-manual.jpg" alt="クリニック向け 電子付箋運用マニュアル" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-        <div class="portfolio-placeholder" style="display:none;">
-          <div>
-            <strong>画像配置待ち</strong>
-            <span>`assets/portfolio/03-digital-sticky-note-manual.jpg` を置くと表示されます</span>
-          </div>
-        </div>
+      <div class="portfolio-media contain">
+        <a href="assets/portfolio/real/03-digital-sticky-note-manual.jpg" target="_blank" rel="noopener">
+          <img src="assets/portfolio/real/03-digital-sticky-note-manual.jpg" alt="クリニック向け 電子付箋運用マニュアル">
+        </a>
       </div>
       <div class="portfolio-body">
         <div class="portfolio-meta">
@@ -563,22 +596,46 @@
           <span class="portfolio-badge">業務改善</span>
         </div>
         <h3>クリニック向け 電子付箋運用マニュアル</h3>
-        <div class="portfolio-copy">
-          <p><strong>目的：</strong>電子カルテ上の付箋運用を、職種別の色分けや整理ルールとしてまとめたスタッフ向けマニュアルです。</p>
-          <p><strong>できることとの接続：</strong>運用ルールと目的が一目で伝わる構成に整え、Before / After や情報共有ルールまで現場で迷わず使える形にできます。</p>
+        <p class="portfolio-copy">電子カルテ上の付箋運用を、職種別の色分けや整理ルールとしてまとめたスタッフ向けマニュアルです。情報共有の迷いや見落としを減らせるよう、現場で使いやすい形に整えています。</p>
+        <div class="portfolio-links">
+          <a class="portfolio-link" href="assets/portfolio/real/03-digital-sticky-note-manual.jpg" target="_blank" rel="noopener">画像を拡大表示</a>
         </div>
-        <p class="portfolio-note">※ 架空クリニック用サンプルです。一部イラスト作成にAI画像生成補助を使用しています。</p>
+        <p class="portfolio-note">架空クリニック用サンプルです。一部イラスト作成にAI画像生成補助を使用しています。</p>
+      </div>
+    </article>
+
+    <article class="portfolio-card">
+      <div class="portfolio-media contain">
+        <a href="assets/portfolio/real/04-clinic-checklist-clean.png" target="_blank" rel="noopener">
+          <img src="assets/portfolio/real/04-clinic-checklist-clean.png" alt="クリニック向け 点検表・チェックリスト整備">
+        </a>
+      </div>
+      <div class="portfolio-body">
+        <div class="portfolio-meta">
+          <span class="portfolio-badge">チェックリスト整備</span>
+          <span class="portfolio-badge">業務改善</span>
+        </div>
+        <h3>クリニック向け 点検表・チェックリスト整備</h3>
+        <p class="portfolio-copy">クリニック内の定期点検や物品管理に使えるチェックリストを、公開用サンプルとして再構成しました。点検漏れや引き継ぎ漏れを防ぎやすいよう、項目と記録欄を整理しています。</p>
+        <div class="portfolio-links">
+          <a class="portfolio-link" href="assets/portfolio/real/04-clinic-checklist-clean.png" target="_blank" rel="noopener">画像を拡大表示</a>
+        </div>
+        <p class="portfolio-note">架空クリニック用サンプルです。実在の施設情報・患者情報は含みません。</p>
       </div>
     </article>
 
     <article class="portfolio-card">
       <div class="portfolio-media">
-        <img src="assets/portfolio/04-ophthalmic-medicine-instagram.svg" alt="看護師向け 眼科薬剤Instagram投稿制作" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-        <div class="portfolio-placeholder" style="display:none;">
-          <div>
-            <strong>プレビュー読込エラー</strong>
-            <span>`assets/portfolio/04-ophthalmic-medicine-instagram.svg` を表示できませんでした</span>
-          </div>
+        <div class="portfolio-gallery">
+          <a href="assets/portfolio/real/05-instagram-1.jpg" target="_blank" rel="noopener">
+            <img src="assets/portfolio/real/05-instagram-1.jpg" alt="ベガモックスInstagram投稿 1枚目">
+          </a>
+          <a href="assets/portfolio/real/05-instagram-5.jpg" target="_blank" rel="noopener">
+            <img src="assets/portfolio/real/05-instagram-5.jpg" alt="ベガモックスInstagram投稿 2枚目">
+          </a>
+          <a href="assets/portfolio/real/05-instagram-7.jpg" target="_blank" rel="noopener">
+            <img src="assets/portfolio/real/05-instagram-7.jpg" alt="ベガモックスInstagram投稿 3枚目">
+          </a>
         </div>
       </div>
       <div class="portfolio-body">
@@ -587,35 +644,13 @@
           <span class="portfolio-badge">看護師向け</span>
         </div>
         <h3>看護師向け 眼科薬剤Instagram投稿制作</h3>
-        <div class="portfolio-copy">
-          <p><strong>目的：</strong>眼科薬剤について、看護師向けに確認しやすいInstagram投稿として整理・制作したサンプルです。</p>
-          <p><strong>できることとの接続：</strong>添付文書情報や看護視点の注意点を踏まえ、薬剤名が見え、短時間で要点が伝わる投稿構成へ整理できます。</p>
+        <p class="portfolio-copy">眼科薬剤について、看護師向けに確認しやすいInstagram投稿として整理・制作しました。添付文書情報や看護視点の注意点を踏まえ、短時間で要点が伝わる構成を意識しています。</p>
+        <div class="portfolio-links">
+          <a class="portfolio-link" href="assets/portfolio/real/05-instagram-1.jpg" target="_blank" rel="noopener">投稿1枚目を見る</a>
+          <a class="portfolio-link" href="assets/portfolio/real/05-instagram-5.jpg" target="_blank" rel="noopener">投稿2枚目を見る</a>
+          <a class="portfolio-link" href="assets/portfolio/real/05-instagram-7.jpg" target="_blank" rel="noopener">投稿3枚目を見る</a>
         </div>
-        <p class="portfolio-note">※ 掲載許可確認済みの制作物です。キャプションは先方作成、投稿内文章整理・画像制作を担当しました。</p>
-      </div>
-    </article>
-
-    <article class="portfolio-card">
-      <div class="portfolio-media">
-        <img src="assets/portfolio/05-checklist-maintenance.svg" alt="クリニック向け 点検表・チェックリスト整備" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-        <div class="portfolio-placeholder" style="display:none;">
-          <div>
-            <strong>プレビュー読込エラー</strong>
-            <span>`assets/portfolio/05-checklist-maintenance.svg` を表示できませんでした</span>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio-body">
-        <div class="portfolio-meta">
-          <span class="portfolio-badge">チェックリスト整備</span>
-          <span class="portfolio-badge">業務改善</span>
-        </div>
-        <h3>クリニック向け 点検表・チェックリスト整備</h3>
-        <div class="portfolio-copy">
-          <p><strong>目的：</strong>クリニック内の定期点検や物品管理に使えるチェックリストを、公開用サンプルとして再構成した資料です。</p>
-          <p><strong>できることとの接続：</strong>表紙_使い方、緊急セット点検表、AED点検表、向精神薬_残数チェック表のように、点検漏れや引き継ぎ漏れを防ぎやすい設計に整えられます。</p>
-        </div>
-        <p class="portfolio-note">※ 架空クリニック用サンプルです。実在の施設情報・患者情報は含みません。</p>
+        <p class="portfolio-note">掲載許可確認済みの制作物です。キャプションは先方作成、投稿内文章整理・画像制作を担当しました。</p>
       </div>
     </article>
   </div>
@@ -630,90 +665,71 @@
   <h2 class="section-title">サービス・料金プラン</h2>
   <div class="pricing-cards">
 
+    <div class="pricing-card featured" onclick="toggleAccordion(this)">
+      <div class="featured-badge">おすすめ</div>
+      <span class="pricing-tag">患者さん向け資料</span>
+      <h3>患者さん向け説明資料・案内文作成 <span class="accordion-arrow">▼</span></h3>
+      <p class="desc">手術案内、術前後の説明文、生活上の注意点などを、患者さんとご家族が見返しやすい資料に整えます。</p>
+      <div class="price-num">¥4,000〜 <span>/ 件</span></div>
+      <div class="price-note">内容・ページ数により相談</div>
+      <div class="accordion-detail">
+        <ul>
+          <li>患者さん向け説明資料・案内文の整理</li>
+          <li>やさしい言葉への言い換えと構成調整</li>
+          <li>Googleドキュメント・Word・PDFで納品</li>
+          <li>修正1回無料</li>
+        </ul>
+        <div class="detail-note">※ 実際の医療判断や指示内容は、医師・医療機関のご確認を前提に整えます。</div>
+      </div>
+    </div>
+
     <div class="pricing-card" onclick="toggleAccordion(this)">
-      <span class="pricing-tag">Instagram</span>
-      <h3>投稿画像制作 <span class="accordion-arrow">▼</span></h3>
-      <p class="desc">フィード1回につき最大10枚の画像を制作。表紙・フィード・まとめ・CTAの4枚構成に対応。</p>
+      <span class="pricing-tag">院内整備</span>
+      <h3>院内マニュアル・チェックリスト整備 <span class="accordion-arrow">▼</span></h3>
+      <p class="desc">業務手順、付箋ルール、点検表、引き継ぎ資料などを、現場で使いやすい形に整理します。</p>
+      <div class="price-num">¥4,000〜 <span>/ 件</span></div>
+      <div class="price-note">内容・ページ数により相談</div>
+      <div class="accordion-detail">
+        <ul>
+          <li>院内マニュアル・業務フローの整理</li>
+          <li>点検表・チェックリストの設計と再構成</li>
+          <li>引き継ぎしやすいフォーマット調整</li>
+          <li>Googleスプレッドシート・Word・PDFで納品</li>
+          <li>修正1回無料</li>
+        </ul>
+        <div class="detail-note">※ 現場での使いやすさを優先し、情報量や運用ルールに合わせて調整します。</div>
+      </div>
+    </div>
+
+    <div class="pricing-card" onclick="toggleAccordion(this)">
+      <span class="pricing-tag">SNS投稿制作</span>
+      <h3>医療・健康系SNS投稿制作 <span class="accordion-arrow">▼</span></h3>
+      <p class="desc">看護師・患者さん向けの情報発信に合わせて、投稿画像や構成をわかりやすく整理して制作します。</p>
       <div class="price-num">¥1,500〜 <span>/ 1投稿</span></div>
       <div class="price-note">納期：3〜5営業日</div>
       <div class="accordion-detail">
         <ul>
           <li>最大10枚／1投稿分の画像制作</li>
-          <li>表紙・フィード・まとめ・CTA画像に対応</li>
-          <li>カラー・フォント・テイストのご要望調整</li>
+          <li>投稿構成の整理と表現の調整</li>
+          <li>医療・健康系の専門性を踏まえた制作</li>
           <li>PNG形式・1:1または4:5サイズ対応</li>
           <li>修正1回無料</li>
         </ul>
-        <div class="detail-note">※ キャプション・ハッシュタグは含まれません。フルセットプランをご利用ください。</div>
-      </div>
-    </div>
-
-    <div class="pricing-card featured" onclick="toggleAccordion(this)">
-      <div class="featured-badge">人気プラン</div>
-      <span class="pricing-tag">Instagram フルセット</span>
-      <h3>投稿フルセット制作 <span class="accordion-arrow">▼</span></h3>
-      <p class="desc">画像制作＋キャプション文章＋ハッシュタグ選定まで全てワンセット。投稿するだけの状態でお届けします。</p>
-      <div class="price-num">¥3,000〜 <span>/ 1投稿</span></div>
-      <div class="price-note">納期：3〜5営業日</div>
-      <div class="accordion-detail">
-        <ul>
-          <li>最大10枚／1投稿分の画像制作</li>
-          <li>投稿キャプション文章（300〜500字程度）</li>
-          <li>ハッシュタグ選定（5〜20個）</li>
-          <li>医療・健康・育児系ジャンル得意</li>
-          <li>修正1回無料</li>
-        </ul>
-        <div class="detail-note">※ 画像・文章・ハッシュタグすべてセットで納品。投稿するだけの状態でお渡しします。</div>
-      </div>
-    </div>
-
-    <div class="pricing-card" onclick="toggleAccordion(this)">
-      <span class="pricing-tag">継続プラン</span>
-      <h3>月次継続プラン <span class="accordion-arrow">▼</span></h3>
-      <p class="desc">月8投稿分のInstagram投稿をフルセットで制作。毎月の発信をまるごとお任せいただけます。</p>
-      <div class="price-num">¥25,000 <span>/ 月</span></div>
-      <div class="price-note">月8投稿フルセット</div>
-      <div class="accordion-detail">
-        <ul>
-          <li>月8投稿分の画像・キャプション・ハッシュタグ制作</li>
-          <li>月初めにテーマ・方向性をヒアリング</li>
-          <li>毎月安定した情報発信をサポート</li>
-          <li>継続割引・優先対応あり</li>
-          <li>修正各1回無料</li>
-        </ul>
-        <div class="detail-note">※ 初月はお試し単発プランからのスタートも歓迎です。まずはご相談ください。</div>
-      </div>
-    </div>
-
-    <div class="pricing-card" onclick="toggleAccordion(this)">
-      <span class="pricing-tag">マニュアル</span>
-      <h3>業務マニュアル作成 <span class="accordion-arrow">▼</span></h3>
-      <p class="desc">院内マニュアル・研修資料・在庫管理表など、誰でも動けるマニュアルを作成。PDF・Word・Googleドキュメントで納品。</p>
-      <div class="price-num">¥4,000〜 <span>/ 件</span></div>
-      <div class="price-note">内容により相談</div>
-      <div class="accordion-detail">
-        <ul>
-          <li>業務手順書・研修マニュアル作成</li>
-          <li>在庫管理表・チェックリスト作成</li>
-          <li>誰でも動けるわかりやすい構成</li>
-          <li>PDF・Word・Googleドキュメントで納品</li>
-          <li>修正1回無料</li>
-        </ul>
-        <div class="detail-note">※ ページ数・内容により料金が変わります。まずはご相談ください。</div>
+        <div class="detail-note">※ 必要に応じてキャプション原稿や継続制作のご相談も可能です。</div>
       </div>
     </div>
 
     <div class="pricing-card" onclick="toggleAccordion(this)">
       <span class="pricing-tag">オンライン秘書</span>
-      <h3>オンライン秘書 <span class="accordion-arrow">▼</span></h3>
-      <p class="desc">スケジュール管理・メール対応・資料作成など、幅広いバックオフィス業務をサポートします。</p>
+      <h3>オンライン秘書・事務サポート <span class="accordion-arrow">▼</span></h3>
+      <p class="desc">スケジュール管理、メール対応、資料整理、データ入力など、日々のバックオフィス業務をサポートします。</p>
       <div class="price-num">要相談</div>
       <div class="price-note">まずはお気軽にご連絡ください</div>
       <div class="accordion-detail">
         <ul>
           <li>スケジュール管理・調整</li>
           <li>メール・メッセージ対応</li>
-          <li>資料作成・データ入力</li>
+          <li>資料整理・データ入力</li>
           <li>各種リサーチ・情報収集</li>
           <li>医療・ヘルスケア系専門対応可</li>
         </ul>
@@ -722,7 +738,7 @@
     </div>
 
   </div>
-  <p class="pricing-footer">※ 構成案提案まで2〜3営業日・納品まで3〜5営業日　※ 継続ご依頼はご相談ください</p>
+  <p class="pricing-footer">※ 内容に合わせてお見積もりします　※ 納期や継続サポートはご相談内容に応じてご案内します</p>
 </section>
 
 <!-- プロフィール -->
@@ -743,13 +759,14 @@
     </div>
     <div class="profile-right">
       <h2>みき（Miki）</h2>
-      <p class="title">元眼科看護師 × AI活用クリエイター｜名古屋在住</p>
-      <p>眼科看護師として13年間（眼科9年・外来・病棟・手術室）勤務。医療現場で培った「正確さ」と「わかりやすく伝える力」を活かし、医療・クリニック専門のSNS運用サポートを提供しています。</p>
-      <p>最新のAIツールを積極的に活用し、高品質なコンテンツを効率よく制作。中規模病院のInstagram運用代行（NDA締結）の実績があります。</p>
+      <p class="title">元眼科看護師 × 医療・健康系オンライン秘書｜名古屋在住</p>
+      <p>眼科看護師として13年間（眼科9年・外来・病棟・手術室）勤務。医療現場で培った「正確さ」と「わかりやすく伝える力」を活かし、患者さん向け説明資料、院内マニュアル、チェックリスト、医療系SNS投稿制作を行っています。</p>
+      <p>専門的な内容をそのまま並べるのではなく、読み手が迷わず理解しやすい順番や表現へ整理することを大切にしています。現場で使える資料づくりと、負担を減らす業務整理の両方を支援します。</p>
       <div class="profile-tags">
         <span class="profile-tag">元眼科看護師13年</span>
         <span class="profile-tag">AI活用</span>
-        <span class="profile-tag">Instagram運用</span>
+        <span class="profile-tag">患者さん向け資料</span>
+        <span class="profile-tag">チェックリスト整備</span>
         <span class="profile-tag">医療専門</span>
         <span class="profile-tag">マニュアル作成</span>
         <span class="profile-tag">名古屋在住</span>
@@ -766,7 +783,7 @@
 <section class="contact" id="contact">
   <h2>まずはお気軽にご相談ください</h2>
   <p>「何を頼めるか相談したい」「まずは見積もりだけ知りたい」という段階でも大歓迎です。<br>内容を確認のうえ、対応可否とお見積もりの目安をご案内いたします。</p>
-  <a href="mailto:miki.creative.nurse@gmail.com?subject=%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%8B%E3%82%89%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&amp;body=%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0D%0A%E4%BC%9A%E7%A4%BE%E5%90%8D%E3%83%BB%E3%82%AF%E3%83%AA%E3%83%8B%E3%83%83%E3%82%AF%E5%90%8D%EF%BC%9A%0D%0A%E3%81%94%E7%9B%B8%E8%AB%87%E5%86%85%E5%AE%B9%EF%BC%9A%0D%0A%0D%0A%E7%8F%BE%E5%9C%A8%E3%81%AE%E3%81%8A%E5%9B%B0%E3%82%8A%E3%81%94%E3%81%A8%EF%BC%9A%0D%0A%0D%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%EF%BC%88%E8%A4%87%E6%95%B0%E5%8F%AF%EF%BC%89%EF%BC%9A%0D%0A%E3%83%BBInstagram%E6%8A%95%E7%A8%BF%E7%94%BB%E5%83%8F%E5%88%B6%E4%BD%9C%0D%0A%E3%83%BB%E6%8A%95%E7%A8%BF%E3%83%95%E3%83%AB%E3%82%BB%E3%83%83%E3%83%88%E5%88%B6%E4%BD%9C%0D%0A%E3%83%BB%E6%9C%88%E6%AC%A1%E7%B6%99%E7%B6%9A%E3%83%97%E3%83%A9%E3%83%B3%0D%0A%E3%83%BB%E6%A5%AD%E5%8B%99%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB%E4%BD%9C%E6%88%90%0D%0A%E3%83%BB%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E7%A7%98%E6%9B%B8%0D%0A%E3%83%BB%E3%81%9D%E3%81%AE%E4%BB%96%0D%0A%0D%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E7%B4%8D%E6%9C%9F%EF%BC%88%E4%BB%BB%E6%84%8F%EF%BC%89%EF%BC%9A%0D%0A%E5%8F%82%E8%80%83URL%E3%83%BBSNS%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%EF%BC%88%E4%BB%BB%E6%84%8F%EF%BC%89%EF%BC%9A%0D%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E8%BF%94%E4%BF%A1%E6%96%B9%E6%B3%95%E3%83%BB%E6%99%82%E9%96%93%E5%B8%AF%EF%BC%88%E4%BB%BB%E6%84%8F%EF%BC%89%EF%BC%9A" class="contact-btn">メールで問い合わせ・見積もり相談</a>
+  <a href="mailto:miki.creative.nurse@gmail.com?subject=%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%8B%E3%82%89%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&amp;body=%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0D%0A%E4%BC%9A%E7%A4%BE%E5%90%8D%E3%83%BB%E3%82%AF%E3%83%AA%E3%83%8B%E3%83%83%E3%82%AF%E5%90%8D%EF%BC%9A%0D%0A%E3%81%94%E7%9B%B8%E8%AB%87%E5%86%85%E5%AE%B9%EF%BC%9A%0D%0A%0D%0A%E7%8F%BE%E5%9C%A8%E3%81%AE%E3%81%8A%E5%9B%B0%E3%82%8A%E3%81%94%E3%81%A8%EF%BC%9A%0D%0A%0D%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%EF%BC%88%E8%A4%87%E6%95%B0%E5%8F%AF%EF%BC%89%EF%BC%9A%0D%0A%E3%83%BB%E6%82%A3%E8%80%85%E3%81%95%E3%82%93%E5%90%91%E3%81%91%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99%E3%83%BB%E6%A1%88%E5%86%85%E6%96%87%E4%BD%9C%E6%88%90%0D%0A%E3%83%BB%E9%99%A2%E5%86%85%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB%E3%83%BB%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88%E6%95%B4%E5%82%99%0D%0A%E3%83%BB%E5%8C%BB%E7%99%82%E3%83%BB%E5%81%A5%E5%BA%B7%E7%B3%BBSNS%E6%8A%95%E7%A8%BF%E5%88%B6%E4%BD%9C%0D%0A%E3%83%BB%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E7%A7%98%E6%9B%B8%E3%83%BB%E4%BA%8B%E5%8B%99%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%0D%0A%E3%83%BB%E3%81%9D%E3%81%AE%E4%BB%96%0D%0A%0D%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E7%B4%8D%E6%9C%9F%EF%BC%88%E4%BB%BB%E6%84%8F%EF%BC%89%EF%BC%9A%0D%0A%E5%8F%82%E8%80%83URL%E3%83%BBSNS%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%EF%BC%88%E4%BB%BB%E6%84%8F%EF%BC%89%EF%BC%9A%0D%0A%E3%81%94%E5%B8%8C%E6%9C%9B%E3%81%AE%E8%BF%94%E4%BF%A1%E6%96%B9%E6%B3%95%E3%83%BB%E6%99%82%E9%96%93%E5%B8%AF%EF%BC%88%E4%BB%BB%E6%84%8F%EF%BC%89%EF%BC%9A" class="contact-btn">メールで問い合わせ・見積もり相談</a>
   <div class="contact-links">
     <a href="https://www.instagram.com/mamanursemichi" target="_blank">📷 Instagram</a>
     <a href="https://note.com/mamanursemichi" target="_blank">📝 note</a>
