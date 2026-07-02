@@ -344,7 +344,7 @@
     background: var(--green-light); border: 4px solid var(--green);
     display: flex; align-items: center; justify-content: center; overflow: hidden;
   }
-  .profile-img-area img { width: 100%; height: 100%; object-fit: cover; display: none; }
+  .profile-img-area img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .profile-img-placeholder-text {
     font-size: 0.7rem; color: var(--green); text-align: center;
     padding: 0.5rem; font-weight: 600; line-height: 1.6;
@@ -388,7 +388,7 @@
     margin-top: 0;
   }
   .pricing-card.open .accordion-detail {
-    max-height: 400px; opacity: 1;
+    max-height: 720px; opacity: 1;
     border-top: 1px solid var(--green-light);
     margin-top: 1rem; padding-top: 1rem;
   }
@@ -734,8 +734,8 @@
       <span class="pricing-tag">患者さん向け資料</span>
       <h3>患者さん向け説明資料・案内文作成 <span class="accordion-arrow">▼</span></h3>
       <p class="desc">手術案内、術前後の説明文、生活上の注意点などを、患者さんとご家族が見返しやすい資料に整えます。</p>
-      <div class="price-num">¥4,000〜 <span>/ 件</span></div>
-      <div class="price-note">内容・ページ数により相談</div>
+      <div class="price-num">¥8,000〜 <span>/ 件</span></div>
+      <div class="price-note">内容・ページ数・図解の有無により個別見積もり</div>
       <div class="accordion-detail">
         <ul>
           <li>患者さん向け説明資料・案内文の整理</li>
@@ -751,8 +751,8 @@
       <span class="pricing-tag">院内整備</span>
       <h3>院内マニュアル・チェックリスト整備 <span class="accordion-arrow">▼</span></h3>
       <p class="desc">業務手順、付箋ルール、点検表、引き継ぎ資料などを、現場で使いやすい形に整理します。</p>
-      <div class="price-num">¥4,000〜 <span>/ 件</span></div>
-      <div class="price-note">内容・ページ数により相談</div>
+      <div class="price-num">¥8,000〜 <span>/ 件</span></div>
+      <div class="price-note">簡易手順書・チェックリストの目安 / 複数ページ・管理表・業務フロー整理は個別見積もり</div>
       <div class="accordion-detail">
         <ul>
           <li>院内マニュアル・業務フローの整理</li>
@@ -767,19 +767,21 @@
 
     <div class="pricing-card" onclick="toggleAccordion(this)">
       <span class="pricing-tag">SNS投稿制作</span>
-      <h3>医療・健康系SNS投稿制作 <span class="accordion-arrow">▼</span></h3>
-      <p class="desc">看護師・患者さん向けの情報発信に合わせて、投稿画像や構成をわかりやすく整理して制作します。</p>
-      <div class="price-num">¥1,500〜 <span>/ 1投稿</span></div>
-      <div class="price-note">納期：3〜5営業日</div>
+      <h3>医療・健康系SNS投稿画像制作 <span class="accordion-arrow">▼</span></h3>
+      <p class="desc">医療・健康系、美容医療・スキンケア系の情報発信に合わせて、投稿画像や構成を見やすく整理して制作します。</p>
+      <div class="price-num">¥10,000〜 <span>/ 1投稿</span></div>
+      <div class="price-note">6〜10枚程度 / 継続制作は個別見積もり</div>
       <div class="accordion-detail">
         <ul>
-          <li>最大10枚／1投稿分の画像制作</li>
-          <li>投稿構成の整理と表現の調整</li>
-          <li>医療・健康系の専門性を踏まえた制作</li>
-          <li>PNG形式・1:1または4:5サイズ対応</li>
-          <li>修正1回無料</li>
+          <li>Instagramフィード投稿画像制作（1投稿6〜10枚程度）</li>
+          <li>医療・健康系コンテンツの画像化</li>
+          <li>美容医療・スキンケア系投稿の画像制作補助</li>
+          <li>Canvaを使用した投稿画像制作</li>
+          <li>原稿・構成案・参考投稿をもとにした画像化</li>
+          <li>読みやすさ、清潔感、正確性を意識したデザイン調整</li>
+          <li>継続制作の目安：月4本 40,000円〜 / 月8本 80,000円〜</li>
         </ul>
-        <div class="detail-note">※ 必要に応じてキャプション原稿や継続制作のご相談も可能です。</div>
+        <div class="detail-note">※ 原稿・構成案・参考投稿・使用素材をご共有いただく前提の料金目安です。企画、リサーチ、原稿作成、医療広告表現の詳細確認、短納期対応、修正回数追加、継続本数は内容により個別にお見積もりします。医療広告表現に関する最終確認はクライアント様側でお願いいたします。</div>
       </div>
     </div>
 
@@ -802,7 +804,7 @@
     </div>
 
   </div>
-  <p class="pricing-footer">※ 内容に合わせてお見積もりします　※ 納期や継続サポートはご相談内容に応じてご案内します<br>※ 公開実績は匿名化・再構成のうえ掲載しています　※ 医療監修そのものではなく、情報整理・資料化・伝わる形への再構成を中心に対応します</p>
+  <p class="pricing-footer">※ 料金は投稿枚数・原稿の有無・構成作成の有無・修正回数・納期・継続本数により個別にお見積もりします<br>※ 公開実績は匿名化・再構成のうえ掲載しています　※ 医療監修そのものではなく、情報整理・資料化・伝わる形への再構成を中心に対応します</p>
 </section>
 
 <!-- ご依頼の流れ -->
@@ -878,16 +880,8 @@
   <p class="section-label">Profile</p>
   <h2 class="section-title">プロフィール</h2>
   <div class="profile-inner">
-    <!--
-      【プロフィール画像差し替えエリア】
-      イラスト画像が準備できたら：
-      1. imgのsrcにファイルパスを入力
-      2. imgのstyle="display:none" を display:block に変更
-      3. placeholder-textのdivを削除
-    -->
     <div class="profile-img-area">
-      <img src="" alt="みきのプロフィール画像" style="display:none;">
-      <div class="profile-img-placeholder-text">イラスト画像<br>準備中</div>
+      <img src="assets/images/profile-miki.jpeg" alt="みきのプロフィールイラスト">
     </div>
     <div class="profile-right">
       <h2>みき（Miki）</h2>
