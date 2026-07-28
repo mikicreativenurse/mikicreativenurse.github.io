@@ -19,12 +19,14 @@ function setupMenu() {
   const closeMenu = () => {
     nav.classList.remove("is-open");
     button.setAttribute("aria-expanded", "false");
+    button.textContent = "メニュー";
   };
 
   button.addEventListener("click", () => {
     const expanded = button.getAttribute("aria-expanded") === "true";
     button.setAttribute("aria-expanded", String(!expanded));
     nav.classList.toggle("is-open", !expanded);
+    button.textContent = expanded ? "メニュー" : "閉じる";
   });
 
   nav.addEventListener("click", (event) => {
