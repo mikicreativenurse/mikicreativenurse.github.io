@@ -37,6 +37,7 @@ h1 span { display: inline-block; }
 .hero-line-a span { display: inline; }
 .no-break { white-space: nowrap; }
 h2 { font-size: clamp(1.65rem, 2.7vw, 2.75rem); }
+.manual-heading span { display: block; }
 h3 { margin: 0 0 .55rem; color: var(--navy); font-size: 1.08rem; line-height: 1.45; }
 p { margin: 0; }
 p + p { margin-top: 1rem; }
