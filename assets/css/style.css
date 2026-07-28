@@ -32,6 +32,8 @@ li + li { margin-top: .35rem; }
 h1, h2 { font-family: var(--serif); color: var(--navy); line-height: 1.35; margin: 0; font-weight: 700; letter-spacing: 0; line-break: strict; overflow-wrap: anywhere; }
 h1 { font-size: clamp(2rem, 3vw, 2.7rem); letter-spacing: 0; }
 h1 span { display: inline-block; }
+.hero-copy h1 { font-size: clamp(1.92rem, 2.75vw, 2.55rem); }
+.hero-line-a { white-space: nowrap; }
 .hero-line-a span { display: inline; }
 .no-break { white-space: nowrap; }
 h2 { font-size: clamp(1.65rem, 2.7vw, 2.75rem); }
@@ -213,6 +215,7 @@ button, input, textarea { font: inherit; }
   .section-tight { padding-top: 28px; }
   h1 { font-size: clamp(1.48rem, 6.3vw, 1.85rem); }
   h1 span { display: block; }
+  .hero-line-a { white-space: normal; }
   .hero-line-a span { display: block; }
   .hero-copy h1 span:last-child { display: inline-block; white-space: nowrap; }
   h2 { font-size: clamp(1.45rem, 7vw, 2rem); }
