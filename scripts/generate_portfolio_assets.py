@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import argparse
+import os
 import shutil
 from pathlib import Path
 from textwrap import wrap
@@ -9,10 +11,8 @@ from docx import Document
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSET_DIR = ROOT / "assets" / "portfolio"
-SOURCE_DIR = Path(
-    r"G:\マイドライブ\ポートフォリオ素材_判定用\ホームページ掲載用_制作実績素材"
-)
+DEFAULT_ASSET_DIR = ROOT / "assets" / "portfolio"
+SOURCE_ENV_VAR = "PORTFOLIO_ASSET_SOURCE_DIR"
 
 
 def split_lines(text: str, width: int) -> list[str]:
@@ -222,8 +222,28 @@ def svg_spreadsheet() -> str:
     return "\n".join(parts)
 
 
-def create_assets() -> None:
-    ASSET_DIR.mkdir(parents=True, exist_ok=True)
+def validate_source_dir(source_dir: Path) -> None:
+    required_paths = [
+        source_dir
+        / "02_網膜剥離手術後の過ごし方説明資料"
+        / "網膜剥離手術後の過ごし方説明資料.docx",
+        source_dir
+        / "03_クリニック向け_電子付箋運用マニュアル"
+        / "クリニック向け_電子付箋運用マニュアル.jpg",
+    ]
+    missing = [path for path in required_paths if not path.exists()]
+    if missing:
+        raise FileNotFoundError(
+            "Required portfolio source files were not found. "
+            "Run with --source-dir pointing to the prepared source directory."
+        )
+
+
+def create_assets(source_dir: Path, asset_dir: Path = DEFAULT_ASSET_DIR) -> None:
+    source_dir = source_dir.expanduser().resolve()
+    asset_dir = asset_dir.resolve()
+    validate_source_dir(source_dir)
+    asset_dir.mkdir(parents=True, exist_ok=True)
 
     surgery_panels = [
         {
@@ -258,7 +278,7 @@ def create_assets() -> None:
             "highlight_body": "ご家族が説明を見返しやすいように、処置後の具体的な行動へ落とし込んだ構成。",
         },
     ]
-    (ASSET_DIR / "01-ophthalmic-surgery-guide.svg").write_text(
+    (asset_dir / "01-ophthalmic-surgery-guide.svg").write_text(
         svg_document(
             title="眼科手術を受ける方へのご案内資料",
             subtitle="患者さんとご家族が術後の過ごし方を見返しやすいように再構成した公開用サンプル",
@@ -269,7 +289,7 @@ def create_assets() -> None:
     )
 
     doc = Document(
-        SOURCE_DIR
+        source_dir
         / "02_網膜剥離手術後の過ごし方説明資料"
         / "網膜剥離手術後の過ごし方説明資料.docx"
     )
@@ -277,7 +297,7 @@ def create_assets() -> None:
     body_left = "\n".join(paragraphs[:8])
     body_right = "\n".join(paragraphs[8:16]) if len(paragraphs) > 8 else "\n".join(paragraphs[:8])
 
-    (ASSET_DIR / "02-retinal-detachment-aftercare.svg").write_text(
+    (asset_dir / "02-retinal-detachment-aftercare.svg").write_text(
         svg_document(
             title="網膜剥離手術後の過ごし方説明資料",
             subtitle="体位制限や生活上の注意点を、自宅でも確認しやすい流れに整理した公開用サンプル",
@@ -301,13 +321,13 @@ def create_assets() -> None:
     )
 
     shutil.copy2(
-        SOURCE_DIR
+        source_dir
         / "03_クリニック向け_電子付箋運用マニュアル"
         / "クリニック向け_電子付箋運用マニュアル.jpg",
-        ASSET_DIR / "03-digital-sticky-note-manual.jpg",
+        asset_dir / "03-digital-sticky-note-manual.jpg",
     )
 
-    (ASSET_DIR / "04-ophthalmic-medicine-instagram.svg").write_text(
+    (asset_dir / "04-ophthalmic-medicine-instagram.svg").write_text(
         svg_instagram(
             [
                 "キサラタン 点眼液0.005%",
@@ -321,11 +341,35 @@ def create_assets() -> None:
         encoding="utf-8",
     )
 
-    (ASSET_DIR / "05-checklist-maintenance.svg").write_text(
+    (asset_dir / "05-checklist-maintenance.svg").write_text(
         svg_spreadsheet(),
         encoding="utf-8",
     )
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Generate portfolio preview assets from a prepared source directory."
+    )
+    parser.add_argument(
+        "--source-dir",
+        default=os.environ.get(SOURCE_ENV_VAR),
+        help=f"Prepared source directory. Can also be set with {SOURCE_ENV_VAR}.",
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=DEFAULT_ASSET_DIR,
+        help="Output directory for generated portfolio assets.",
+    )
+    return parser.parse_args()
+
+
 if __name__ == "__main__":
-    create_assets()
+    args = parse_args()
+    if not args.source_dir:
+        raise SystemExit(
+            "Source directory is required. "
+            'Run with --source-dir "<source-directory>".'
+        )
+    create_assets(Path(args.source_dir), args.output_dir)
