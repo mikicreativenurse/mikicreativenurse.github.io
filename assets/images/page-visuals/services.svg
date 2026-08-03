@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-labelledby="title desc">
+  <title id="title">整理された書類とチェックリスト</title>
+  <desc id="desc">フォルダ、書類、チェックリストを整理する様子を表す線画</desc>
+  <rect width="320" height="200" fill="#fffdf8"/>
+  <g fill="none" stroke="#102b63" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M38 70h76l14 16h68v72H38z"/>
+    <path d="M38 88h158"/>
+    <rect x="184" y="42" width="82" height="112" rx="8"/>
+    <path d="M204 68h38M204 92h38M204 116h38"/>
+  </g>
+  <g fill="none" stroke="#7fa06f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m68 122 10 10 22-28"/>
+    <path d="M74 44h70M74 56h92"/>
+    <rect x="56" y="34" width="18" height="24" rx="3"/>
+    <path d="M232 67l8 8 18-22M232 91l8 8 18-22M232 115l8 8 18-22"/>
+  </g>
+  <path d="M34 166h252" stroke="#ddd6c8" stroke-width="2" stroke-linecap="round"/>
+</svg>

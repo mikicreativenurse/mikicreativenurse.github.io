@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-labelledby="title desc">
+  <title id="title">質問と書類</title>
+  <desc id="desc">書類と質問マークを組み合わせた線画</desc>
+  <rect width="320" height="200" fill="#fffdf8"/>
+  <g fill="none" stroke="#102b63" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="54" y="42" width="112" height="124" rx="8"/>
+    <path d="M78 72h58M78 96h66M78 120h48"/>
+    <path d="M198 76c0-20 15-34 36-34 19 0 33 12 33 30 0 16-10 24-23 31-10 6-13 10-13 20"/>
+    <path d="M231 148h.01"/>
+  </g>
+  <g fill="none" stroke="#7fa06f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="38" y="58" width="30" height="34" rx="5"/>
+    <path d="M206 76c2-8 10-14 20-14"/>
+    <path d="M214 124h34"/>
+  </g>
+  <path d="M34 174h252" stroke="#ddd6c8" stroke-width="2" stroke-linecap="round"/>
+</svg>
