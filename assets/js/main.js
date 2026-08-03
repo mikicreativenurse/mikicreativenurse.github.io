@@ -1,4 +1,4 @@
-const FORM_URL = "https://docs.google.com/forms/d/1GX3NAksEHVv_qAnvY70cq3SLPSN9TiDo5OHpiW-zgH4/viewform";
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfL7PbZHNz2bVpKTuXkMPHQlQcvziVZJcOisFYQIc3cSmB_Yw/viewform";
 
 function applyFormLinks() {
   const links = document.querySelectorAll(".form-link");
