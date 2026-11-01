@@ -1,0 +1,47 @@
+.work-card.business-sample .sample-image,
+.work-entry.business-sample .sample-image {
+  display: block;
+  margin: 0;
+  padding: 10px;
+  background: #fff;
+}
+.business-sample .sample-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 1;
+  object-fit: contain;
+  padding: 0;
+}
+.business-sample .sample-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin-top: 16px;
+}
+.business-sample .sample-links a { margin-top: 0; font-weight: 700; }
+.business-sample .work-type {
+  display: inline-block;
+  align-self: flex-start;
+  flex-grow: 0;
+  margin: 4px 0 14px;
+  padding: 3px 9px;
+  border-left: 2px solid var(--sage);
+  color: var(--sage);
+  font-size: .82rem;
+  font-weight: 700;
+}
+.business-sample a:focus-visible { outline: 3px solid var(--sage); outline-offset: 3px; }
+.business-sample .card-pair {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  background: #fff;
+}
+.business-sample .card-pair a { display: block; margin: 0; }
+.business-sample .card-pair img {
+  width: 100%; height: auto; max-height: none;
+  aspect-ratio: auto; object-fit: contain; padding: 0;
+}
